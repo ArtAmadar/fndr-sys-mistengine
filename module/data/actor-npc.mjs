@@ -13,6 +13,10 @@ export default class MistEngineNPC extends MistEngineActorBase {
     return schema
   }
 
+  get limits() {
+    return this.items.filter(item => item.type === "status")
+  }
+
   prepareDerivedData() {
     this.xp = this.cr * this.cr * 100;
   }
